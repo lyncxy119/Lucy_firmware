@@ -12,7 +12,7 @@
         <ByteLimit>50</ByteLimit>
     </Stack>
     <DebugChecksum>
-        <Checksum>1793123155</Checksum>
+        <Checksum>3770732067</Checksum>
     </DebugChecksum>
     <CallStack>
         <ShowArgs>1</ShowArgs>
@@ -21,7 +21,8 @@
         <MixedMode>1</MixedMode>
     </Disassembly>
     <Breakpoints>
-        <Count>0</Count>
+        <Bp0>_ "STD_CODE" "{$PROJ_DIR$\..\Source\simpleBLECentral.c}.1565.35" 1 0 0 0 "" 0 ""</Bp0>
+        <Count>1</Count>
     </Breakpoints>
     <ChipconEmu>
         <StopTimersOnHalt>0</StopTimersOnHalt>

@@ -76,6 +76,7 @@
 #define STATUS_CONNECTING	0x31
 #define STATUS_CONNECTED	0x32
 #define STATUS_NOTIFY		0x33
+#define STATUS_DISCONNECTING    0x34
 
 #define CONNECT_REQ	0x40
 #define WRITE_CMD	0x41
@@ -1513,8 +1514,18 @@ static void NpiSerialCallback( uint8 port, uint8 events )
               
                                   break;
                                 case DISCONNECT_REQ://断开蓝牙连接
+                                    
+                                  uint8 data;
+                                  if((simpleBLEState == BLE_STATE_IDLE))
+                                  {
+                                    calc_data_send(&data,1,STATUS_DISCONNECTED);
+                                  }else
+                                  {
+                                    calc_data_send(&data,1,STATUS_DISCONNECTING);
+                                  }
+                                  
                                   GAPCentralRole_TerminateLink(simpleBLEConnHandle);
-                                  Onboard_soft_reset();
+                                //  Onboard_soft_reset();
                                   break;
                                 case WRITE_CMD://写入数据
                                   
